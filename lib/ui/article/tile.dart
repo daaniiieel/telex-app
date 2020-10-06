@@ -92,9 +92,7 @@ class ArticleTile extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () async {
-              var prefs = await SharedPreferences.getInstance();
-
+            onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => ArticleView(
                         article: article.slug,
