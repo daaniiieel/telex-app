@@ -130,11 +130,11 @@ class SettingsPage1 extends StatelessWidget {
                       ),
                     ],
                     onChanged: (value) async {
-                      print('value: $value');
+                      
                       var prefs = await SharedPreferences.getInstance();
                       await prefs.setString('fontFamily', value);
                       app.fontFamily = value;
-                      print(app.fontFamily);
+                      
                     })),
             Spacer(),
             Padding(
