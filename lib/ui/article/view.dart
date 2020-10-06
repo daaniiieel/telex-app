@@ -43,7 +43,8 @@ class ArticleView extends StatelessWidget {
 
           data.data.recommended.forEach((r) {
             recommended.add(ListTile(
-              title: Text(r.title),
+              title:
+                  Text(r.title, style: TextStyle(fontFamily: app.fontFamily)),
               subtitle: Text(r.tag.name),
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -110,6 +111,7 @@ class ArticleView extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 24.0,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: app.fontFamily,
                               ),
                             ),
                           ),
@@ -127,12 +129,11 @@ class ArticleView extends StatelessWidget {
                                     horizontal: 14.0,
                                     vertical: 16.0,
                                   ),
-                                  child: Text(
-                                    data.data.lead,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 17.0),
-                                  ),
+                                  child: Text(data.data.lead,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 17.0,
+                                          fontFamily: app.fontFamily)),
                                 )
                               : Container(),
                           Padding(
@@ -143,7 +144,7 @@ class ArticleView extends StatelessWidget {
                                     builder: (context) => Photo(image: img)),
                               ),
                               style: {
-                                "body": Style(fontFamily: app.fontFamily),
+                                "*": Style(fontFamily: app.fontFamily),
                                 "p": Style(
                                   fontSize: FontSize(16.0),
                                 ),
@@ -152,6 +153,7 @@ class ArticleView extends StatelessWidget {
                                   fontSize: FontSize(14.0),
                                   padding: EdgeInsets.all(8.0),
                                   textAlign: TextAlign.center,
+                                  fontFamily: app.fontFamily,
                                   backgroundColor:
                                       Theme.of(context).brightness ==
                                               Brightness.light
@@ -172,7 +174,9 @@ class ArticleView extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                "h1": Style(fontSize: FontSize(22.0)),
+                                "h1": Style(
+                                    fontSize: FontSize(22.0),
+                                    fontFamily: app.fontFamily),
                                 "li": Style(
                                   fontSize: FontSize(16.0),
                                   margin: EdgeInsets.only(bottom: 6.0),
@@ -197,6 +201,7 @@ class ArticleView extends StatelessWidget {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 24.0,
+                                      fontFamily: app.fontFamily,
                                     ),
                                   ),
                                 )
@@ -217,6 +222,7 @@ class ArticleView extends StatelessWidget {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 24.0,
+                                      fontFamily: app.fontFamily,
                                     ),
                                   ),
                                 )
