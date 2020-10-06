@@ -5,6 +5,7 @@ import 'package:telex/telex/image.dart';
 import 'package:telex/ui/article/view.dart';
 import 'package:telex/ui/dot.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ArticleTile extends StatelessWidget {
   final Article article;
@@ -91,9 +92,13 @@ class ArticleTile extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () {
+            onTap: () async {
+              var prefs = await SharedPreferences.getInstance();
+
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ArticleView(article: article.slug)));
+                  builder: (context) => ArticleView(
+                        article: article.slug,
+                      )));
             },
           ),
         ),

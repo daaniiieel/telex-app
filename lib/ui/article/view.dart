@@ -13,7 +13,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 class ArticleView extends StatelessWidget {
   final String article;
-  const ArticleView({Key key, @required this.article}) : super(key: key);
+  final String fontFamily;
+  const ArticleView({Key key, @required this.article, this.fontFamily})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +143,10 @@ class ArticleView extends StatelessWidget {
                                     builder: (context) => Photo(image: img)),
                               ),
                               style: {
-                                "p": Style(fontSize: FontSize(16.0)),
+                                "body": Style(fontFamily: app.fontFamily),
+                                "p": Style(
+                                  fontSize: FontSize(16.0),
+                                ),
                                 "figure": Style(margin: EdgeInsets.zero),
                                 "figcaption": Style(
                                   fontSize: FontSize(14.0),
